@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 import model.collectibles.*;
 
-public class Hero extends Character{
+public abstract class Hero extends Character{
     private int actionsAvailable;
     private int maxActions;
-    private boolean specialActions;
+    private boolean specialAction;
     private ArrayList<Vaccine> vaccineInventory;
     private ArrayList<Supply> supplyInventory;
 
@@ -15,7 +15,7 @@ public class Hero extends Character{
         super(name, maxHp, attackDmg);
         this.maxActions = maxActions;
         this.actionsAvailable = maxActions;
-        this.specialActions = false;
+        this.specialAction = false;
         this.vaccineInventory = new ArrayList<Vaccine>();
         this.supplyInventory = new ArrayList<Supply>();
     }
@@ -36,12 +36,12 @@ public class Hero extends Character{
         this.actionsAvailable = actionsAvailable;
     }
 
-    public boolean isSpecialActions() {
-        return specialActions;
+    public boolean isSpecialAction() {
+        return specialAction;
     }
 
-    public void setSpecialActions(boolean specialActions) {
-        this.specialActions = specialActions;
+    public void setSpecialAction(boolean specialActions) {
+        this.specialAction = specialActions;
     }
 
     public int getMaxActions() {

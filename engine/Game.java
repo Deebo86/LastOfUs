@@ -8,9 +8,9 @@ import model.characters.*;
 import model.world.Cell;
 
 public class Game {
-    public static ArrayList<Hero> availableHeros = new ArrayList<Hero>();
-    public static ArrayList<Zombie> zombiesn = new ArrayList<Zombie>();
-    public static ArrayList<Hero> heros = new ArrayList<Hero>();
+    public static ArrayList<Hero> availableHeroes = new ArrayList<Hero>();
+    public static ArrayList<Zombie> zombies = new ArrayList<Zombie>();
+    public static ArrayList<Hero> heroes = new ArrayList<Hero>();
     public static Cell[][] map = new Cell[15][15];
 
     public static void loadHeros(String filePath) throws Exception
@@ -23,15 +23,16 @@ public class Game {
             switch(data[1])
             {
                 case "FIGH":
-                    availableHeros.add(new Fighter(data[0], Integer.parseInt(data[2]), Integer.parseInt(data[4]), Integer.parseInt(data[3])));
+                    availableHeroes.add(new Fighter(data[0], Integer.parseInt(data[2]), Integer.parseInt(data[4]), Integer.parseInt(data[3])));
                     break;
                 case "EXP":
-                    availableHeros.add(new Explorer(data[0], Integer.parseInt(data[2]), Integer.parseInt(data[4]), Integer.parseInt(data[3])));
+                    availableHeroes.add(new Explorer(data[0], Integer.parseInt(data[2]), Integer.parseInt(data[4]), Integer.parseInt(data[3])));
                     break;
                 default:
-                    availableHeros.add(new Medic(data[0], Integer.parseInt(data[2]), Integer.parseInt(data[4]), Integer.parseInt(data[3])));
+                    availableHeroes.add(new Medic(data[0], Integer.parseInt(data[2]), Integer.parseInt(data[4]), Integer.parseInt(data[3])));
                     break;
             }
         }
+        br.close();
     }
 }

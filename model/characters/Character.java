@@ -1,6 +1,6 @@
 package model.characters;
 
-import javafx.scene.effect.Light.Point;
+import java.awt.Point;
 
 public abstract class Character {
     private String name;
@@ -22,7 +22,10 @@ public abstract class Character {
     }
 
     public void setCurrentHp(int currentHp) {
-        this.currentHp = currentHp;
+        if(currentHp<= 0)
+            this.currentHp = 0;
+        else
+            this.currentHp = currentHp;
     }
 
     public Character getTarget() {
