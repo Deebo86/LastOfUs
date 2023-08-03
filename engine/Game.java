@@ -13,11 +13,11 @@ public class Game {
     public static ArrayList<Hero> heroes = new ArrayList<Hero>();
     public static Cell[][] map = new Cell[15][15];
 
-    public static void loadHeros(String filePath) throws Exception
+    public static void loadHeroes(String filePath) throws Exception
     {
         BufferedReader br = new BufferedReader(new FileReader(filePath));
-        String line = br.readLine();
-        while(line != null)
+        String line;
+        while((line  = br.readLine()) != null)
         {
             String [] data = line.split(",");
             switch(data[1])
